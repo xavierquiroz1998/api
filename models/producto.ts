@@ -1,6 +1,7 @@
 import { DataTypes } from 'sequelize';
 import db from '../db/connection';
 import Proveedor from './proveedor';
+import Unidad from './unidad';
 
 const Producto = db.define('Producto', {
 
@@ -43,6 +44,7 @@ const Producto = db.define('Producto', {
 
 
 Producto.belongsTo(Proveedor, { foreignKey: 'idProveedor', targetKey: 'id' });
+Producto.belongsTo(Unidad, { foreignKey: 'idUnidad', targetKey: 'id' });
 
 /* Proveedor.hasOne(Producto, {
     foreignKey: 'estado'

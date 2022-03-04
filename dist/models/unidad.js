@@ -15,6 +15,9 @@ const Unidad = connection_1.default.define('Unidad', {
     estado: {
         type: sequelize_1.DataTypes.BOOLEAN
     },
+}, {
+    freezeTableName: true,
+    timestamps: false
 });
 exports.default = Unidad;
 //# sourceMappingURL=unidad.js.map

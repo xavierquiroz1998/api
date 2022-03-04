@@ -11,6 +11,9 @@ const Unidad = db.define('Unidad', {
     estado: {
         type: DataTypes.BOOLEAN
     },
+}, {
+    freezeTableName: true,
+    timestamps: false
 });
 
 

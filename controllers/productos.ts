@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { json } from 'sequelize/types';
 import Producto from '../models/producto';
 import Proveedor from '../models/proveedor';
+import Unidad from '../models/unidad';
 
 
 export const getProductos = async (req: Request, res: Response) => {
@@ -15,7 +16,7 @@ export const getProductos = async (req: Request, res: Response) => {
 export const getProductosExt = async (req: Request, res: Response) => {
 
     const producto = await Producto.findAll({
-        include: Proveedor
+        include: [Proveedor, Unidad]
     });
 
     res.json(producto);
