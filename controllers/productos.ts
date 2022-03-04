@@ -18,7 +18,7 @@ export const getProductosExt = async (req: Request, res: Response) => {
         include: Proveedor
     });
 
-    res.json({ producto });
+    res.json(producto);
 }
 
 export const getProducto = async (req: Request, res: Response) => {
@@ -123,7 +123,6 @@ export const deleteProducto = async (req: Request, res: Response) => {
     await producto.update({ estado: false });
 
     // await producto.destroy();
-
 
     res.json(producto);
 }

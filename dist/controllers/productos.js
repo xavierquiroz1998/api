@@ -24,7 +24,7 @@ const getProductosExt = (req, res) => __awaiter(void 0, void 0, void 0, function
     const producto = yield producto_1.default.findAll({
         include: proveedor_1.default
     });
-    res.json({ producto });
+    res.json(producto);
 });
 exports.getProductosExt = getProductosExt;
 const getProducto = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
