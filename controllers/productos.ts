@@ -41,7 +41,6 @@ export const getProducto = async (req: Request, res: Response) => {
 }
 
 
-
 export const postProducto = async (req: Request, res: Response) => {
 
     const { body } = req;

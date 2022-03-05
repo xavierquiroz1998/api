@@ -26,6 +26,9 @@ const Producto = connection_1.default.define('Producto', {
     precio: {
         type: sequelize_1.DataTypes.DOUBLE
     },
+    cantidad: {
+        type: sequelize_1.DataTypes.DOUBLE
+    },
     idUnidad: {
         type: sequelize_1.DataTypes.INTEGER,
     },
