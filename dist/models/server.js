@@ -18,6 +18,7 @@ const grupos_1 = __importDefault(require("../routes/grupos"));
 const productos_1 = __importDefault(require("../routes/productos"));
 const proveedor_1 = __importDefault(require("../routes/proveedor"));
 const unidades_1 = __importDefault(require("../routes/unidades"));
+const bodegas_1 = __importDefault(require("../routes/bodegas"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
@@ -27,7 +28,8 @@ class Server {
             grupos: '/api/grupos',
             productos: '/api/productos',
             proveedores: '/api/proveedores',
-            unidades: '/api/unidades'
+            unidades: '/api/unidades',
+            bodegas: '/api/bodegas'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -60,7 +62,8 @@ class Server {
             this.app.use(this.apiPaths.grupos, grupos_1.default),
             this.app.use(this.apiPaths.productos, productos_1.default),
             this.app.use(this.apiPaths.proveedores, proveedor_1.default),
-            this.app.use(this.apiPaths.unidades, unidades_1.default);
+            this.app.use(this.apiPaths.unidades, unidades_1.default),
+            this.app.use(this.apiPaths.bodegas, bodegas_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {

@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import db from '../db/connection';
+import Grupo from './grupo';
 import Proveedor from './proveedor';
 import Unidad from './unidad';
 
@@ -30,6 +31,10 @@ const Producto = db.define('Producto', {
         type: DataTypes.UUID,
 
     },
+    idGrupo: {
+        type: DataTypes.UUID,
+
+    },
     estado: {
         type: DataTypes.BOOLEAN
     },
@@ -45,6 +50,7 @@ const Producto = db.define('Producto', {
 
 Producto.belongsTo(Proveedor, { foreignKey: 'idProveedor', targetKey: 'id' });
 Producto.belongsTo(Unidad, { foreignKey: 'idUnidad', targetKey: 'id' });
+Producto.belongsTo(Grupo, { foreignKey: 'idGrupo', targetKey: 'id' });
 
 /* Proveedor.hasOne(Producto, {
     foreignKey: 'estado'

@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteProducto = exports.putProducto = exports.postProducto = exports.getProducto = exports.getProductosExt = exports.getProductos = void 0;
+const grupo_1 = __importDefault(require("../models/grupo"));
 const producto_1 = __importDefault(require("../models/producto"));
 const proveedor_1 = __importDefault(require("../models/proveedor"));
 const unidad_1 = __importDefault(require("../models/unidad"));
@@ -23,7 +24,7 @@ const getProductos = (req, res) => __awaiter(void 0, void 0, void 0, function* (
 exports.getProductos = getProductos;
 const getProductosExt = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const producto = yield producto_1.default.findAll({
-        include: [proveedor_1.default, unidad_1.default]
+        include: [proveedor_1.default, unidad_1.default, grupo_1.default]
     });
     res.json(producto);
 });

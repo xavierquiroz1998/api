@@ -4,6 +4,7 @@ import grupoRoutes from '../routes/grupos';
 import productoRoutes from '../routes/productos';
 import proveedorRoutes from '../routes/proveedor';
 import UnidadRoutes from '../routes/unidades';
+import BodegaRoutes from '../routes/bodegas';
 import cors from 'cors';
 
 import db from '../db/connection';
@@ -18,7 +19,8 @@ class Server {
         grupos: '/api/grupos',
         productos: '/api/productos',
         proveedores: '/api/proveedores',
-        unidades: '/api/unidades'
+        unidades: '/api/unidades',
+        bodegas: '/api/bodegas'
     }
 
     constructor() {
@@ -62,7 +64,8 @@ class Server {
             this.app.use(this.apiPaths.grupos, grupoRoutes),
             this.app.use(this.apiPaths.productos, productoRoutes),
             this.app.use(this.apiPaths.proveedores, proveedorRoutes),
-            this.app.use(this.apiPaths.unidades, UnidadRoutes)
+            this.app.use(this.apiPaths.unidades, UnidadRoutes),
+            this.app.use(this.apiPaths.bodegas, BodegaRoutes)
     }
 
 
