@@ -7,7 +7,7 @@ export const getProveedores = async (req: Request, res: Response) => {
 
     const provedores = await Proveedor.findAll();
 
-    res.json({ provedores });
+    res.json(provedores);
 }
 
 export const getProveedor = async (req: Request, res: Response) => {
