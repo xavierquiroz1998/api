@@ -7,7 +7,7 @@ export const getUnidades = async (req: Request, res: Response) => {
 
     const unidades = await Unidad.findAll();
 
-    res.json({ unidades });
+    res.json(unidades);
 }
 
 export const getUnidad = async (req: Request, res: Response) => {

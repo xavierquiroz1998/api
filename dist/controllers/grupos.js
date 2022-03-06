@@ -16,7 +16,7 @@ exports.deleteGrupo = exports.putGrupo = exports.postGrupo = exports.getGrupo = 
 const grupo_1 = __importDefault(require("../models/grupo"));
 const getGrupos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const grupo = yield grupo_1.default.findAll();
-    res.json({ grupo });
+    res.json(grupo);
 });
 exports.getGrupos = getGrupos;
 const getGrupo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

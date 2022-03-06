@@ -7,7 +7,7 @@ export const getGrupos = async (req: Request, res: Response) => {
 
     const grupo = await Grupo.findAll();
 
-    res.json({ grupo });
+    res.json(grupo);
 }
 
 export const getGrupo = async (req: Request, res: Response) => {

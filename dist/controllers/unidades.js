@@ -16,7 +16,7 @@ exports.deleteUnidad = exports.putUnidad = exports.postUnidad = exports.getUnida
 const unidad_1 = __importDefault(require("../models/unidad"));
 const getUnidades = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const unidades = yield unidad_1.default.findAll();
-    res.json({ unidades });
+    res.json(unidades);
 });
 exports.getUnidades = getUnidades;
 const getUnidad = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
