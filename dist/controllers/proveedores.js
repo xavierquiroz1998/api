@@ -16,7 +16,7 @@ exports.deleteProveedor = exports.putProveedor = exports.postProveedor = exports
 const proveedor_1 = __importDefault(require("../models/proveedor"));
 const getProveedores = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const provedores = yield proveedor_1.default.findAll();
-    res.json({ provedores });
+    res.json(provedores);
 });
 exports.getProveedores = getProveedores;
 const getProveedor = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
