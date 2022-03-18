@@ -127,3 +127,39 @@ export const deleteProducto = async (req: Request, res: Response) => {
 
     res.json(producto);
 }
+
+
+
+
+export const validarProducto = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    try {
+
+        const isExite = await Producto.findOne({
+            where: {
+                referencia: id
+            }
+        });
+
+        if (isExite) {
+            return res.status(400).json({
+                msg: 'Ya existe es codigo de referencia ' + id
+            });
+        }
+
+        res.json(true);
+
+
+    } catch (error) {
+
+        console.log(error);
+        res.status(500).json({
+            msg: 'Hable con el administrador'
+        })
+    }
+
+
+
+}

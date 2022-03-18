@@ -9,5 +9,6 @@ router.get('/:id', productos_1.getProducto);
 router.post('/', productos_1.postProducto);
 router.put('/:id', productos_1.putProducto);
 router.delete('/:id', productos_1.deleteProducto);
+router.get('/validar/:id', productos_1.validarProducto);
 exports.default = router;
 //# sourceMappingURL=productos.js.map

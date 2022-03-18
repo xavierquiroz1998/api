@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteProducto = exports.putProducto = exports.postProducto = exports.getProducto = exports.getProductosExt = exports.getProductos = void 0;
+exports.validarProducto = exports.deleteProducto = exports.putProducto = exports.postProducto = exports.getProducto = exports.getProductosExt = exports.getProductos = void 0;
 const grupo_1 = __importDefault(require("../models/grupo"));
 const producto_1 = __importDefault(require("../models/producto"));
 const proveedor_1 = __importDefault(require("../models/proveedor"));
@@ -101,4 +101,27 @@ const deleteProducto = (req, res) => __awaiter(void 0, void 0, void 0, function*
     res.json(producto);
 });
 exports.deleteProducto = deleteProducto;
+const validarProducto = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    try {
+        const isExite = yield producto_1.default.findOne({
+            where: {
+                referencia: id
+            }
+        });
+        if (isExite) {
+            return res.status(400).json({
+                msg: 'Ya existe es codigo de referencia ' + id
+            });
+        }
+        res.json(true);
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500).json({
+            msg: 'Hable con el administrador'
+        });
+    }
+});
+exports.validarProducto = validarProducto;
 //# sourceMappingURL=productos.js.map

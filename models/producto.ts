@@ -23,7 +23,6 @@ const Producto = db.define('Producto', {
     precio: {
         type: DataTypes.DOUBLE
     },
-
     cantidad: {
         type: DataTypes.DOUBLE
     },
