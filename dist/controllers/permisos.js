@@ -48,16 +48,16 @@ exports.getPermiso = getPermiso;
 const postPermiso = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
-        const existepermiso = yield permiso_1.default.findOne({
-            where: {
-                codigo: body.codigo
-            }
-        });
-        if (existepermiso) {
-            return res.status(400).json({
-                msg: 'Ya existe codigo' + body.codigo
-            });
-        }
+        // const existepermiso = yield permiso_1.default.findOne({
+        //     where: {
+        //         codigo: body.codigo
+        //     }
+        // });
+        // if (existepermiso) {
+        //     return res.status(400).json({
+        //         msg: 'Ya existe codigo' + body.codigo
+        //     });
+        // }
         const permiso = permiso_1.default.build(body);
         yield permiso.save();
         res.json(permiso);
