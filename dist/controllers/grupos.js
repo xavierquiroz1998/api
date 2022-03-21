@@ -35,6 +35,7 @@ exports.getGrupo = getGrupo;
 const postGrupo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
+
         // const existeCodRef = yield grupo_1.default.findOne({
         //     where: {
         //         codRef: body.codRef
