@@ -33,15 +33,15 @@ export const postGrupo = async (req: Request, res: Response) => {
 
     try {
 
-        const existeCodRef = await Grupo.findOne({
+        const exite = await Grupo.findOne({
             where: {
-                codRef: body.codRef
+                referencia: body.referencia
             }
         });
 
-        if (existeCodRef) {
+        if (exite) {
             return res.status(400).json({
-                msg: 'Ya existe un usuario con el email ' + body.email
+                msg: 'Ya existe referencia' + body.referencia
             });
         }
 

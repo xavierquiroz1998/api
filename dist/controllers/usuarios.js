@@ -16,7 +16,7 @@ exports.deleteUsuario = exports.putUsuario = exports.postUsuario = exports.getUs
 const usuario_1 = __importDefault(require("../models/usuario"));
 const getUsuarios = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const usuarios = yield usuario_1.default.findAll();
-    res.json(usuarios);
+    res.json({ usuarios });
 });
 exports.getUsuarios = getUsuarios;
 const getUsuario = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

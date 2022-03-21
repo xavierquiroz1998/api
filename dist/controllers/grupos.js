@@ -35,17 +35,16 @@ exports.getGrupo = getGrupo;
 const postGrupo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
-
-        // const existeCodRef = yield grupo_1.default.findOne({
-        //     where: {
-        //         codRef: body.codRef
-        //     }
-        // });
-        // if (existeCodRef) {
-        //     return res.status(400).json({
-        //         msg: 'Ya existe un usuario con el email ' + body.email
-        //     });
-        // }
+        const exite = yield grupo_1.default.findOne({
+            where: {
+                referencia: body.referencia
+            }
+        });
+        if (exite) {
+            return res.status(400).json({
+                msg: 'Ya existe referencia' + body.referencia
+            });
+        }
         const objeto = grupo_1.default.build(body);
         yield objeto.save();
         res.json(objeto);
