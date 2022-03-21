@@ -35,16 +35,16 @@ exports.getProveedor = getProveedor;
 const postProveedor = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
-        const existeproveedor = yield proveedor_1.default.findOne({
-            where: {
-                codigo: body.codigo
-            }
-        });
-        if (existeproveedor) {
-            return res.status(400).json({
-                msg: 'Ya existe codigo' + body.codigo
-            });
-        }
+        // const existeproveedor = yield proveedor_1.default.findOne({
+        //     where: {
+        //         codigo: body.codigo
+        //     }
+        // });
+        // if (existeproveedor) {
+        //     return res.status(400).json({
+        //         msg: 'Ya existe codigo' + body.codigo
+        //     });
+        // }
         const proveedor = proveedor_1.default.build(body);
         yield proveedor.save();
         res.json(proveedor);
@@ -80,12 +80,12 @@ const putProveedor = (req, res) => __awaiter(void 0, void 0, void 0, function* (
 exports.putProveedor = putProveedor;
 const deleteProveedor = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
-    const proveedor = yield proveedor_1.default.findByPk(id);
-    if (!proveedor) {
-        return res.status(404).json({
-            msg: 'No existe un proveedor con el id ' + id
-        });
-    }
+    // const proveedor = yield proveedor_1.default.findByPk(id);
+    // if (!proveedor) {
+    //     return res.status(404).json({
+    //         msg: 'No existe un proveedor con el id ' + id
+    //     });
+    // }
     yield proveedor.update({ estado: false });
     // await proveedor.destroy();
     res.json(proveedor);
