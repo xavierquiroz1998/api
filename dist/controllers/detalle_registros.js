@@ -14,8 +14,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteDetalleRegistro = exports.putDetalleRegistro = exports.postDetalleRegistro = exports.getDetalleRegistro = exports.getDetalleRegistros = void 0;
 const detalle_registro_1 = __importDefault(require("../models/detalle_registro"));
+const producto_1 = __importDefault(require("../models/producto"));
+const registro_1 = __importDefault(require("../models/registro"));
 const getDetalleRegistros = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const detalle = yield detalle_registro_1.default.findAll();
+    const detalle = yield detalle_registro_1.default.findAll({
+        include: [producto_1.default, registro_1.default]
+    });
     res.json(detalle);
 });
 exports.getDetalleRegistros = getDetalleRegistros;

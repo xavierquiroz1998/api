@@ -1,11 +1,14 @@
 import { Request, Response } from 'express';
 import { json } from 'sequelize/types';
 import Registro from '../models/registro';
+import TipoRegistro from '../models/tipo_registro';
 
 
 export const getRegistros = async (req: Request, res: Response) => {
 
-    const registro = await Registro.findAll();
+    const registro = await Registro.findAll({
+        include: [TipoRegistro]
+    });
 
     res.json(registro);
 }
@@ -32,20 +35,6 @@ export const postRegistro = async (req: Request, res: Response) => {
     const { body } = req;
 
     try {
-
-        const exite = await Registro.findOne({
-            where: {
-                referencia: body.referencia
-            }
-        });
-
-        if (exite) {
-            return res.status(400).json({
-                msg: 'Ya existe referencia' + body.referencia
-            });
-        }
-
-
 
 
         const objeto = Registro.build(body);

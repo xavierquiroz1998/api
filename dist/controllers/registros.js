@@ -14,8 +14,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteRegistro = exports.putRegistro = exports.postRegistro = exports.getRegistro = exports.getRegistros = void 0;
 const registro_1 = __importDefault(require("../models/registro"));
+const tipo_registro_1 = __importDefault(require("../models/tipo_registro"));
 const getRegistros = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const registro = yield registro_1.default.findAll();
+    const registro = yield registro_1.default.findAll({
+        include: [tipo_registro_1.default]
+    });
     res.json(registro);
 });
 exports.getRegistros = getRegistros;
@@ -35,16 +38,6 @@ exports.getRegistro = getRegistro;
 const postRegistro = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
-        const exite = yield registro_1.default.findOne({
-            where: {
-                referencia: body.referencia
-            }
-        });
-        if (exite) {
-            return res.status(400).json({
-                msg: 'Ya existe referencia' + body.referencia
-            });
-        }
         const objeto = registro_1.default.build(body);
         yield objeto.save();
         res.json(objeto);

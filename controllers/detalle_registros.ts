@@ -1,11 +1,15 @@
 import { Request, Response } from 'express';
 import { json } from 'sequelize/types';
 import DetalleRegistro from '../models/detalle_registro';
+import Producto from '../models/producto';
+import Registro from '../models/registro';
 
 
 export const getDetalleRegistros = async (req: Request, res: Response) => {
 
-    const detalle = await DetalleRegistro.findAll();
+    const detalle = await DetalleRegistro.findAll({
+        include: [Producto, Registro]
+    });
 
     res.json(detalle);
 }

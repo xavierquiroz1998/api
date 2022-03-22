@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import db from '../db/connection';
+import TipoRegistro from './tipo_registro';
 
 const Registro = db.define('Registro', {
     id: {
@@ -8,9 +9,6 @@ const Registro = db.define('Registro', {
         primaryKey: true
     },
     idTipo: {
-        type: DataTypes.UUID
-    },
-    idDetalle: {
         type: DataTypes.UUID
     },
     detalle: {
@@ -24,5 +22,7 @@ const Registro = db.define('Registro', {
     timestamps: false
 });
 
+
+Registro.belongsTo(TipoRegistro, { foreignKey: 'idTipo', targetKey: 'id' });
 
 export default Registro;

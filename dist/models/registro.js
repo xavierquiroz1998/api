@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
+const tipo_registro_1 = __importDefault(require("./tipo_registro"));
 const Registro = connection_1.default.define('Registro', {
     id: {
         type: sequelize_1.DataTypes.INTEGER,
@@ -12,9 +13,6 @@ const Registro = connection_1.default.define('Registro', {
         primaryKey: true
     },
     idTipo: {
-        type: sequelize_1.DataTypes.UUID
-    },
-    idDetalle: {
         type: sequelize_1.DataTypes.UUID
     },
     detalle: {
@@ -27,5 +25,6 @@ const Registro = connection_1.default.define('Registro', {
     freezeTableName: true,
     timestamps: false
 });
+Registro.belongsTo(tipo_registro_1.default, { foreignKey: 'idTipo', targetKey: 'id' });
 exports.default = Registro;
 //# sourceMappingURL=registro.js.map

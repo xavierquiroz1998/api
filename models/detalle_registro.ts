@@ -1,5 +1,7 @@
 import { DataTypes } from 'sequelize';
 import db from '../db/connection';
+import Producto from './producto';
+import Registro from './registro';
 
 const DetalleRegistro = db.define('DetalleRegistro', {
     id: {
@@ -27,5 +29,9 @@ const DetalleRegistro = db.define('DetalleRegistro', {
     timestamps: false
 });
 
+
+
+DetalleRegistro.belongsTo(Registro, { foreignKey: 'idRegistro', targetKey: 'id' });
+DetalleRegistro.belongsTo(Producto, { foreignKey: 'idProducto', targetKey: 'id' });
 
 export default DetalleRegistro;
