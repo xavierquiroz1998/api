@@ -33,19 +33,17 @@ export const postUsuario = async (req: Request, res: Response) => {
 
     try {
 
-        const existeEmail = await Usuario.findOne({
-            where: {
-                email: body.email
-            }
-        });
-
-        if (existeEmail) {
-            return res.status(400).json({
-                msg: 'Ya existe un usuario con el email ' + body.email
-            });
-        }
-
-
+        /*         const existeEmail = await Usuario.findOne({
+                    where: {
+                        email: body.email
+                    }
+                });
+        
+                if (existeEmail) {
+                    return res.status(400).json({
+                        msg: 'Ya existe un usuario con el email ' + body.email
+                    });
+                } */
 
 
         const usuario = Usuario.build(body);

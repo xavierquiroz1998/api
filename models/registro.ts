@@ -3,7 +3,9 @@ import db from '../db/connection';
 
 const Registro = db.define('Registro', {
     id: {
-        type: DataTypes.UUID
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
     },
     idTipo: {
         type: DataTypes.UUID

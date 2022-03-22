@@ -35,16 +35,17 @@ exports.getUsuario = getUsuario;
 const postUsuario = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
-        const existeEmail = yield usuario_1.default.findOne({
-            where: {
-                email: body.email
-            }
-        });
-        if (existeEmail) {
-            return res.status(400).json({
-                msg: 'Ya existe un usuario con el email ' + body.email
-            });
-        }
+        /*         const existeEmail = await Usuario.findOne({
+                    where: {
+                        email: body.email
+                    }
+                });
+        
+                if (existeEmail) {
+                    return res.status(400).json({
+                        msg: 'Ya existe un usuario con el email ' + body.email
+                    });
+                } */
         const usuario = usuario_1.default.build(body);
         yield usuario.save();
         res.json(usuario);

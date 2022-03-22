@@ -3,7 +3,9 @@ import db from '../db/connection';
 
 const TipoRegistro = db.define('TipoRegistro', {
     id: {
-        type: DataTypes.UUID
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
     },
     codigo: {
         type: DataTypes.STRING
@@ -15,7 +17,7 @@ const TipoRegistro = db.define('TipoRegistro', {
         type: DataTypes.STRING
     },
     estado: {
-        type: DataTypes.STRING
+        type: DataTypes.BOOLEAN
     },
 }, {
     freezeTableName: true,

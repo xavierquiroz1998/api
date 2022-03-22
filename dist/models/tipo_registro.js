@@ -7,7 +7,9 @@ const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
 const TipoRegistro = connection_1.default.define('TipoRegistro', {
     id: {
-        type: sequelize_1.DataTypes.UUID
+        type: sequelize_1.DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
     },
     codigo: {
         type: sequelize_1.DataTypes.STRING
@@ -19,7 +21,7 @@ const TipoRegistro = connection_1.default.define('TipoRegistro', {
         type: sequelize_1.DataTypes.STRING
     },
     estado: {
-        type: sequelize_1.DataTypes.STRING
+        type: sequelize_1.DataTypes.BOOLEAN
     },
 }, {
     freezeTableName: true,

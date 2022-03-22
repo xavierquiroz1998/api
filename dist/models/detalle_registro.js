@@ -7,7 +7,9 @@ const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
 const DetalleRegistro = connection_1.default.define('DetalleRegistro', {
     id: {
-        type: sequelize_1.DataTypes.UUID
+        type: sequelize_1.DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
     },
     cantidad: {
         type: sequelize_1.DataTypes.DOUBLE
