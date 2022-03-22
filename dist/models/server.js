@@ -21,6 +21,9 @@ const unidades_1 = __importDefault(require("../routes/unidades"));
 const bodegas_1 = __importDefault(require("../routes/bodegas"));
 const proyectos_1 = __importDefault(require("../routes/proyectos"));
 const permisos_1 = __importDefault(require("../routes/permisos"));
+const tipo_registros_1 = __importDefault(require("../routes/tipo_registros"));
+const registros_1 = __importDefault(require("../routes/registros"));
+const detalle_registros_1 = __importDefault(require("../routes/detalle_registros"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
@@ -33,7 +36,10 @@ class Server {
             unidades: '/api/unidades',
             bodegas: '/api/bodegas',
             permisos: '/api/permisos',
-            proyectos: '/api/proyectos'
+            proyectos: '/api/proyectos',
+            tipoRegistro: '/api/tipoRegistro',
+            detalleRegistro: '/api/detalleRegistros',
+            registro: '/api/registros'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -69,7 +75,10 @@ class Server {
             this.app.use(this.apiPaths.unidades, unidades_1.default),
             this.app.use(this.apiPaths.bodegas, bodegas_1.default),
             this.app.use(this.apiPaths.proyectos, proyectos_1.default),
-            this.app.use(this.apiPaths.permisos, permisos_1.default);
+            this.app.use(this.apiPaths.permisos, permisos_1.default),
+            this.app.use(this.apiPaths.detalleRegistro, detalle_registros_1.default),
+            this.app.use(this.apiPaths.registro, registros_1.default),
+            this.app.use(this.apiPaths.tipoRegistro, tipo_registros_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {

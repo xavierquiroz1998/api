@@ -7,7 +7,7 @@ export const getUsuarios = async (req: Request, res: Response) => {
 
     const usuarios = await Usuario.findAll();
 
-    res.json({ usuarios });
+    res.json(usuarios);
 }
 
 export const getUsuario = async (req: Request, res: Response) => {

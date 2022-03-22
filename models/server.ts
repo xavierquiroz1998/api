@@ -7,6 +7,9 @@ import UnidadRoutes from '../routes/unidades';
 import BodegaRoutes from '../routes/bodegas';
 import ProyectoRoutes from '../routes/proyectos';
 import PermisoRoutes from '../routes/permisos';
+import TipoRegistroRoutes from '../routes/tipo_registros';
+import RegistroRoutes from '../routes/registros';
+import DetalleRegistroRoutes from '../routes/detalle_registros';
 import cors from 'cors';
 
 import db from '../db/connection';
@@ -24,7 +27,10 @@ class Server {
         unidades: '/api/unidades',
         bodegas: '/api/bodegas',
         permisos: '/api/permisos',
-        proyectos: '/api/proyectos'
+        proyectos: '/api/proyectos',
+        tipoRegistro: '/api/tipoRegistro',
+        detalleRegistro: '/api/detalleRegistros',
+        registro: '/api/registros'
     }
 
     constructor() {
@@ -71,7 +77,10 @@ class Server {
             this.app.use(this.apiPaths.unidades, UnidadRoutes),
             this.app.use(this.apiPaths.bodegas, BodegaRoutes),
             this.app.use(this.apiPaths.proyectos, ProyectoRoutes),
-            this.app.use(this.apiPaths.permisos, PermisoRoutes)
+            this.app.use(this.apiPaths.permisos, PermisoRoutes),
+            this.app.use(this.apiPaths.detalleRegistro, DetalleRegistroRoutes),
+            this.app.use(this.apiPaths.registro, RegistroRoutes),
+            this.app.use(this.apiPaths.tipoRegistro, TipoRegistroRoutes)
     }
 
 
