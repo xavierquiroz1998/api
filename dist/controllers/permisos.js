@@ -50,12 +50,13 @@ const postPermiso = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     try {
         const existepermiso = yield permiso_1.default.findOne({
             where: {
-                codigo: body.codigo
+                idProyecto: body.idProyecto,
+                idUsuario: body.idUsuario
             }
         });
         if (existepermiso) {
             return res.status(400).json({
-                msg: 'Ya existe codigo' + body.codigo
+                msg: 'Ya exite permiso registado'
             });
         }
         const permiso = permiso_1.default.build(body);

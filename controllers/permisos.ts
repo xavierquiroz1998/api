@@ -55,13 +55,14 @@ export const postPermiso = async (req: Request, res: Response) => {
         const existepermiso = await Permiso.findOne({
 
             where: {
-                codigo: body.codigo
+                idProyecto: body.idProyecto,
+                idUsuario: body.idUsuario
             }
         });
 
         if (existepermiso) {
             return res.status(400).json({
-                msg: 'Ya existe codigo' + body.codigo
+                msg: 'Ya exite permiso registado'
             });
         }
 
