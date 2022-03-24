@@ -21,6 +21,12 @@ const Registro = connection_1.default.define('Registro', {
     estado: {
         type: sequelize_1.DataTypes.BOOLEAN
     },
+    createdAt: {
+        type: sequelize_1.DataTypes.DATE
+    },
+    updatedAt: {
+        type: sequelize_1.DataTypes.DATE
+    },
 }, {
     freezeTableName: true,
     timestamps: false
