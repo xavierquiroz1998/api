@@ -24,9 +24,6 @@ const Registro = connection_1.default.define('Registro', {
     createdAt: {
         type: sequelize_1.DataTypes.DATE
     },
-    updatedAt: {
-        type: sequelize_1.DataTypes.DATE
-    },
 }, {
     freezeTableName: true,
     timestamps: false
