@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getRegistro, getRegistros, postRegistro, putRegistro, deleteRegistro } from '../controllers/registros';
+import { getRegistro, getRegistros, postRegistro, putRegistro, deleteRegistro, getRegistrosTipo } from '../controllers/registros';
 
 
 const router = Router();
@@ -7,6 +7,7 @@ const router = Router();
 
 router.get('/', getRegistros);
 router.get('/:id', getRegistro);
+router.get('/gettipo/:id', getRegistrosTipo);
 router.post('/', postRegistro);
 router.put('/:id', putRegistro);
 router.delete('/:id', deleteRegistro);

@@ -13,6 +13,20 @@ export const getRegistros = async (req: Request, res: Response) => {
     res.json(registro);
 }
 
+export const getRegistrosTipo = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    const registro = await Registro.findAll({
+        include: [TipoRegistro],
+        where: {
+            idTipo: id
+        }
+    });
+
+    res.json(registro);
+}
+
 export const getRegistro = async (req: Request, res: Response) => {
 
     const { id } = req.params;
