@@ -14,6 +14,7 @@ export const getDetalleRegistros = async (req: Request, res: Response) => {
     res.json(detalle);
 }
 
+
 export const getDetalleRegistro = async (req: Request, res: Response) => {
 
     const { id } = req.params;

@@ -12,7 +12,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteRegistro = exports.putRegistro = exports.postRegistro = exports.getRegistro = exports.getRegistrosTipo = exports.getRegistros = void 0;
+exports.deleteRegistro = exports.putRegistro = exports.postRegistro = exports.getRegistro = exports.getRegistrosDetalle = exports.getRegistrosTipo = exports.getRegistros = void 0;
+const detalle_registro_1 = __importDefault(require("../models/detalle_registro"));
 const registro_1 = __importDefault(require("../models/registro"));
 const tipo_registro_1 = __importDefault(require("../models/tipo_registro"));
 const getRegistros = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -33,6 +34,20 @@ const getRegistrosTipo = (req, res) => __awaiter(void 0, void 0, void 0, functio
     res.json(registro);
 });
 exports.getRegistrosTipo = getRegistrosTipo;
+const getRegistrosDetalle = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    const registro = yield registro_1.default.findByPk(id);
+    const detalles = yield detalle_registro_1.default.findAll({
+        where: {
+            idRegistro: id
+        }
+    });
+    res.json({
+        registro,
+        detalles
+    });
+});
+exports.getRegistrosDetalle = getRegistrosDetalle;
 const getRegistro = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const registro = yield registro_1.default.findByPk(id);

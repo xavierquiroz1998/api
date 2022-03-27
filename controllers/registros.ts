@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { json } from 'sequelize/types';
+import DetalleRegistro from '../models/detalle_registro';
 import Registro from '../models/registro';
 import TipoRegistro from '../models/tipo_registro';
 
@@ -25,6 +26,25 @@ export const getRegistrosTipo = async (req: Request, res: Response) => {
     });
 
     res.json(registro);
+}
+export const getRegistrosDetalle = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    const registro = await Registro.findByPk(id);
+
+    const detalles = await DetalleRegistro.findAll({
+        where: {
+            idRegistro: id
+        }
+    });
+
+
+
+    res.json({
+        registro,
+        detalles
+    });
 }
 
 export const getRegistro = async (req: Request, res: Response) => {
