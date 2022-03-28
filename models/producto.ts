@@ -26,6 +26,9 @@ const Producto = db.define('Producto', {
     cantidad: {
         type: DataTypes.DOUBLE
     },
+    pedido: {
+        type: DataTypes.INTEGER
+    },
 
     idUnidad: {
         type: DataTypes.INTEGER,
