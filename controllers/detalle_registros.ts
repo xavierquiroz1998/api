@@ -32,6 +32,27 @@ export const getDetalleRegistro = async (req: Request, res: Response) => {
 
 }
 
+export const getDetalleRegistro2 = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    const detalle = await DetalleRegistro.findAll({
+        where: {
+            idRegistro: id
+        }
+    });
+
+    if (detalle) {
+        res.json(detalle);
+    } else {
+        res.status(404).json({
+            msg: `No existe un usuario con el id ${id}`
+        });
+    }
+
+
+}
+
 export const postDetalleRegistro = async (req: Request, res: Response) => {
 
     const { body } = req;
