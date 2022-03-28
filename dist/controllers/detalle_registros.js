@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteDetalleRegistro = exports.putDetalleRegistro = exports.postDetalleRegistro = exports.getDetalleRegistro = exports.getDetalleRegistros = void 0;
+exports.deleteDetalleRegistro = exports.putDetalleRegistro = exports.postDetalleRegistro = exports.getDetalleRegistro2 = exports.getDetalleRegistro = exports.getDetalleRegistros = void 0;
 const detalle_registro_1 = __importDefault(require("../models/detalle_registro"));
 const producto_1 = __importDefault(require("../models/producto"));
 const registro_1 = __importDefault(require("../models/registro"));
@@ -36,6 +36,23 @@ const getDetalleRegistro = (req, res) => __awaiter(void 0, void 0, void 0, funct
     }
 });
 exports.getDetalleRegistro = getDetalleRegistro;
+const getDetalleRegistro2 = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    const detalle = yield detalle_registro_1.default.findAll({
+        where: {
+            idRegistro: id
+        }
+    });
+    if (detalle) {
+        res.json(detalle);
+    }
+    else {
+        res.status(404).json({
+            msg: `No existe un usuario con el id ${id}`
+        });
+    }
+});
+exports.getDetalleRegistro2 = getDetalleRegistro2;
 const postDetalleRegistro = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
