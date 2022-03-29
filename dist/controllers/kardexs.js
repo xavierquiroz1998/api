@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteKardex = exports.putKardex = exports.postKardex = exports.getKardexProducto = exports.getKardex = exports.getKardexsExclude = exports.getKardexs = void 0;
+exports.deleteKardex = exports.putKardex = exports.postKardex = exports.getKardexProducto = exports.getKardex = exports.getKardexs = void 0;
 const kardex_1 = __importDefault(require("../models/kardex"));
 const producto_1 = __importDefault(require("../models/producto"));
 const getKardexs = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -20,13 +20,16 @@ const getKardexs = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     res.json(kardexs);
 });
 exports.getKardexs = getKardexs;
-const getKardexsExclude = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const kardexs = yield kardex_1.default.findAll({
+/* export const getKardexsExclude = async (req: Request, res: Response) => {
+
+    const kardexs = await Kardex.findAll({
         attributes: { exclude: ['idProducto'] }
     });
+
     res.json(kardexs);
-});
-exports.getKardexsExclude = getKardexsExclude;
+}
+
+ */
 const getKardex = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const kardex = yield kardex_1.default.findByPk(id);
