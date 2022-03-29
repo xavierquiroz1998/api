@@ -4,6 +4,7 @@ const express_1 = require("express");
 const kardexs_1 = require("../controllers/kardexs");
 const router = (0, express_1.Router)();
 router.get('/', kardexs_1.getKardexs);
+router.get('/getexclude', kardexs_1.getKardexsExclude);
 router.get('/:id', kardexs_1.getKardex);
 router.get('/getproducto/:id', kardexs_1.getKardexProducto);
 router.post('/', kardexs_1.postKardex);

@@ -6,12 +6,22 @@ import Producto from '../models/producto';
 
 export const getKardexs = async (req: Request, res: Response) => {
 
-    const kardexs = await Kardex.findAll({ include: [Producto] });
+    const kardexs = await Kardex.findAll();
 
     res.json(kardexs);
 }
 
 
+/* export const getKardexsExclude = async (req: Request, res: Response) => {
+
+    const kardexs = await Kardex.findAll({
+        attributes: { exclude: ['idProducto'] }
+    });
+
+    res.json(kardexs);
+}
+
+ */
 
 export const getKardex = async (req: Request, res: Response) => {
 
