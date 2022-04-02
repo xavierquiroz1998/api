@@ -14,6 +14,9 @@ const Registro = db.define('Registro', {
     detalle: {
         type: DataTypes.STRING
     },
+    idSecundario: {
+        type: DataTypes.INTEGER
+    },
     estado: {
         type: DataTypes.BOOLEAN
     },
