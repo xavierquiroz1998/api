@@ -12,6 +12,7 @@ import RegistroRoutes from '../routes/registros';
 import DetalleRegistroRoutes from '../routes/detalle_registros';
 import KardexRoutes from '../routes/kardexs';
 import ParametroRoutes from '../routes/parametros';
+import MovimientoRoutes from '../routes/movimientos';
 import cors from 'cors';
 
 import db from '../db/connection';
@@ -34,7 +35,8 @@ class Server {
         detalleRegistro: '/api/detalleRegistros',
         registro: '/api/registros',
         kardex: '/api/kardex',
-        parametro: '/api/parametro'
+        parametro: '/api/parametro',
+        movimiento: '/api/movimiento'
     }
 
     constructor() {
@@ -86,7 +88,8 @@ class Server {
             this.app.use(this.apiPaths.registro, RegistroRoutes),
             this.app.use(this.apiPaths.tipoRegistro, TipoRegistroRoutes),
             this.app.use(this.apiPaths.kardex, KardexRoutes),
-            this.app.use(this.apiPaths.parametro, ParametroRoutes)
+            this.app.use(this.apiPaths.parametro, ParametroRoutes),
+            this.app.use(this.apiPaths.movimiento, MovimientoRoutes)
     }
 
 

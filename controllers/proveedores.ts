@@ -33,20 +33,6 @@ export const postProveedor = async (req: Request, res: Response) => {
 
     try {
 
-        // const existeproveedor = await Proveedor.findOne({
-        //     where: {
-        //         codigo: body.codigo
-        //     }
-        // });
-
-        // if (existeproveedor) {
-        //     return res.status(400).json({
-        //         msg: 'Ya existe codigo' + body.codigo
-        //     });
-        // }
-
-
-
 
         const proveedor = Proveedor.build(body);
 

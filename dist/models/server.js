@@ -26,6 +26,7 @@ const registros_1 = __importDefault(require("../routes/registros"));
 const detalle_registros_1 = __importDefault(require("../routes/detalle_registros"));
 const kardexs_1 = __importDefault(require("../routes/kardexs"));
 const parametros_1 = __importDefault(require("../routes/parametros"));
+const movimientos_1 = __importDefault(require("../routes/movimientos"));
 const cors_1 = __importDefault(require("cors"));
 const connection_1 = __importDefault(require("../db/connection"));
 class Server {
@@ -43,7 +44,8 @@ class Server {
             detalleRegistro: '/api/detalleRegistros',
             registro: '/api/registros',
             kardex: '/api/kardex',
-            parametro: '/api/parametro'
+            parametro: '/api/parametro',
+            movimiento: '/api/movimiento'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -84,7 +86,8 @@ class Server {
             this.app.use(this.apiPaths.registro, registros_1.default),
             this.app.use(this.apiPaths.tipoRegistro, tipo_registros_1.default),
             this.app.use(this.apiPaths.kardex, kardexs_1.default),
-            this.app.use(this.apiPaths.parametro, parametros_1.default);
+            this.app.use(this.apiPaths.parametro, parametros_1.default),
+            this.app.use(this.apiPaths.movimiento, movimientos_1.default);
     }
     listen() {
         this.app.listen(this.port, () => {

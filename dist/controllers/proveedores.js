@@ -35,16 +35,6 @@ exports.getProveedor = getProveedor;
 const postProveedor = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
-        // const existeproveedor = await Proveedor.findOne({
-        //     where: {
-        //         codigo: body.codigo
-        //     }
-        // });
-        // if (existeproveedor) {
-        //     return res.status(400).json({
-        //         msg: 'Ya existe codigo' + body.codigo
-        //     });
-        // }
         const proveedor = proveedor_1.default.build(body);
         yield proveedor.save();
         res.json(proveedor);

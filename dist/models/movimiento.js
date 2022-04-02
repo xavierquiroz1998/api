@@ -5,35 +5,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
-const Proveedor = connection_1.default.define('Proveedor', {
+const producto_1 = __importDefault(require("./producto"));
+const Movimiento = connection_1.default.define('Movimiento', {
     id: {
         type: sequelize_1.DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true
     },
-    identificacion: {
+    idProducto: {
         type: sequelize_1.DataTypes.STRING
     },
-    nombre: {
-        type: sequelize_1.DataTypes.STRING,
-    },
-    correo: {
+    codigo: {
         type: sequelize_1.DataTypes.STRING
-    },
-    telefono: {
-        type: sequelize_1.DataTypes.STRING
-    },
-    direccion: {
-        type: sequelize_1.DataTypes.STRING
-    },
-    holgura: {
-        type: sequelize_1.DataTypes.INTEGER
-    },
-    estado: {
-        type: sequelize_1.DataTypes.BOOLEAN
     },
 }, {
     freezeTableName: true,
     timestamps: false
 });
-exports.default = Proveedor;
-//# sourceMappingURL=proveedor.js.map
+Movimiento.belongsTo(producto_1.default, { foreignKey: 'idProducto', targetKey: 'id' });
+exports.default = Movimiento;
+//# sourceMappingURL=movimiento.js.map

@@ -13,11 +13,6 @@ const Proveedor = db.define('Proveedor', {
     },
     nombre: {
         type: DataTypes.STRING,
-        validate: {
-            isAlpha: {
-                msg: "El nombre no puede contener numero"
-            },
-        }
     },
     correo: {
         type: DataTypes.STRING
@@ -27,6 +22,9 @@ const Proveedor = db.define('Proveedor', {
     },
     direccion: {
         type: DataTypes.STRING
+    },
+    holgura: {
+        type: DataTypes.INTEGER
     },
     estado: {
         type: DataTypes.BOOLEAN
