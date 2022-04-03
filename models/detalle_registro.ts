@@ -21,6 +21,9 @@ const DetalleRegistro = db.define('DetalleRegistro', {
     idRegistro: {
         type: DataTypes.UUID
     },
+    lote: {
+        type: DataTypes.STRING
+    },
     observacion: {
         type: DataTypes.STRING
     },

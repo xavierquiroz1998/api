@@ -18,6 +18,9 @@ const Registro = connection_1.default.define('Registro', {
     detalle: {
         type: sequelize_1.DataTypes.STRING
     },
+    idSecundario: {
+        type: sequelize_1.DataTypes.INTEGER
+    },
     estado: {
         type: sequelize_1.DataTypes.BOOLEAN
     },

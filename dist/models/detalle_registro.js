@@ -25,6 +25,9 @@ const DetalleRegistro = connection_1.default.define('DetalleRegistro', {
     idRegistro: {
         type: sequelize_1.DataTypes.UUID
     },
+    lote: {
+        type: sequelize_1.DataTypes.STRING
+    },
     observacion: {
         type: sequelize_1.DataTypes.STRING
     },
