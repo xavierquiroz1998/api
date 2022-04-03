@@ -14,6 +14,12 @@ const Registro = db.define('Registro', {
     detalle: {
         type: DataTypes.STRING
     },
+    cliente: {
+        type: DataTypes.STRING
+    },
+    referencia: {
+        type: DataTypes.INTEGER
+    },
     idSecundario: {
         type: DataTypes.INTEGER
     },
