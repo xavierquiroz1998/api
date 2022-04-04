@@ -39,4 +39,5 @@ const Registro = connection_1.default.define('Registro', {
 });
 Registro.belongsTo(tipo_registro_1.default, { foreignKey: 'idTipo', targetKey: 'id' });
 exports.default = Registro;
+//cambio
 //# sourceMappingURL=registro.js.map
