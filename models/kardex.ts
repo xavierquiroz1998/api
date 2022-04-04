@@ -16,33 +16,33 @@ const Kardex = db.define('Kardex', {
         type: DataTypes.INTEGER
     },
     proCanI: {
-        type: DataTypes.INTEGER
+        type: DataTypes.DOUBLE
     },
     proUntI: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.DOUBLE
     },
     proTtlI: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.DOUBLE
     },
 
     proCanS: {
-        type: DataTypes.INTEGER
+        type: DataTypes.DOUBLE
     },
     proUntS: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.DOUBLE
     },
     proTtlS: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.DOUBLE
     },
 
     proCanE: {
-        type: DataTypes.INTEGER
+        type: DataTypes.DOUBLE
     },
     proUntE: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.DOUBLE
     },
     proTtlE: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.DOUBLE
     },
     createdAt: {
         type: DataTypes.DATE

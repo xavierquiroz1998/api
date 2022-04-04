@@ -18,31 +18,31 @@ const Kardex = connection_1.default.define('Kardex', {
         type: sequelize_1.DataTypes.INTEGER
     },
     proCanI: {
-        type: sequelize_1.DataTypes.INTEGER
+        type: sequelize_1.DataTypes.DOUBLE
     },
     proUntI: {
-        type: sequelize_1.DataTypes.DECIMAL
+        type: sequelize_1.DataTypes.DOUBLE
     },
     proTtlI: {
-        type: sequelize_1.DataTypes.DECIMAL
+        type: sequelize_1.DataTypes.DOUBLE
     },
     proCanS: {
-        type: sequelize_1.DataTypes.INTEGER
+        type: sequelize_1.DataTypes.DOUBLE
     },
     proUntS: {
-        type: sequelize_1.DataTypes.DECIMAL
+        type: sequelize_1.DataTypes.DOUBLE
     },
     proTtlS: {
-        type: sequelize_1.DataTypes.DECIMAL
+        type: sequelize_1.DataTypes.DOUBLE
     },
     proCanE: {
-        type: sequelize_1.DataTypes.INTEGER
+        type: sequelize_1.DataTypes.DOUBLE
     },
     proUntE: {
-        type: sequelize_1.DataTypes.DECIMAL
+        type: sequelize_1.DataTypes.DOUBLE
     },
     proTtlE: {
-        type: sequelize_1.DataTypes.DECIMAL
+        type: sequelize_1.DataTypes.DOUBLE
     },
     createdAt: {
         type: sequelize_1.DataTypes.DATE
