@@ -18,6 +18,12 @@ const Registro = connection_1.default.define('Registro', {
     detalle: {
         type: sequelize_1.DataTypes.STRING
     },
+    cliente: {
+        type: sequelize_1.DataTypes.STRING
+    },
+    referencia: {
+        type: sequelize_1.DataTypes.INTEGER
+    },
     idSecundario: {
         type: sequelize_1.DataTypes.INTEGER
     },
