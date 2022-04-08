@@ -26,6 +26,9 @@ const Registro = db.define('Registro', {
     estado: {
         type: DataTypes.BOOLEAN
     },
+    fecha: {
+        type: DataTypes.DATE
+    },
     createdAt: {
         type: DataTypes.DATE
     },

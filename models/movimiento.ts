@@ -14,6 +14,12 @@ const Movimiento = db.define('Movimiento', {
     codigo: {
         type: DataTypes.STRING
     },
+    total: {
+        type: DataTypes.INTEGER
+    },
+    actual: {
+        type: DataTypes.INTEGER
+    },
 }, {
     freezeTableName: true,
     timestamps: false

@@ -19,7 +19,7 @@ const proveedor_1 = __importDefault(require("../models/proveedor"));
 const unidad_1 = __importDefault(require("../models/unidad"));
 const getProductos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const producto = yield producto_1.default.findAll();
-    res.json({ producto });
+    res.json(producto);
 });
 exports.getProductos = getProductos;
 const getProductosExt = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

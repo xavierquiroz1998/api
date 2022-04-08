@@ -10,7 +10,7 @@ export const getProductos = async (req: Request, res: Response) => {
 
     const producto = await Producto.findAll();
 
-    res.json({ producto });
+    res.json(producto);
 }
 
 

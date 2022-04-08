@@ -41,6 +41,14 @@ const Producto = db.define('Producto', {
         type: DataTypes.UUID,
 
     },
+    fecha: {
+        type: DataTypes.DATE,
+
+    },
+    lote: {
+        type: DataTypes.STRING,
+
+    },
     estado: {
         type: DataTypes.BOOLEAN
     },

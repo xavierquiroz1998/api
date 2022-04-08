@@ -41,6 +41,12 @@ const Producto = connection_1.default.define('Producto', {
     idGrupo: {
         type: sequelize_1.DataTypes.UUID,
     },
+    fecha: {
+        type: sequelize_1.DataTypes.DATE,
+    },
+    lote: {
+        type: sequelize_1.DataTypes.STRING,
+    },
     estado: {
         type: sequelize_1.DataTypes.BOOLEAN
     },

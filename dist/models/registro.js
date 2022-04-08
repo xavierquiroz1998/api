@@ -30,6 +30,9 @@ const Registro = connection_1.default.define('Registro', {
     estado: {
         type: sequelize_1.DataTypes.BOOLEAN
     },
+    fecha: {
+        type: sequelize_1.DataTypes.DATE
+    },
     createdAt: {
         type: sequelize_1.DataTypes.DATE
     },
@@ -39,5 +42,4 @@ const Registro = connection_1.default.define('Registro', {
 });
 Registro.belongsTo(tipo_registro_1.default, { foreignKey: 'idTipo', targetKey: 'id' });
 exports.default = Registro;
-//cambio
 //# sourceMappingURL=registro.js.map

@@ -18,6 +18,12 @@ const Movimiento = connection_1.default.define('Movimiento', {
     codigo: {
         type: sequelize_1.DataTypes.STRING
     },
+    total: {
+        type: sequelize_1.DataTypes.INTEGER
+    },
+    actual: {
+        type: sequelize_1.DataTypes.INTEGER
+    },
 }, {
     freezeTableName: true,
     timestamps: false
