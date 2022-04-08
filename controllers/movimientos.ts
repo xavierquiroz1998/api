@@ -1,11 +1,25 @@
 import { Request, Response } from 'express';
-import { json } from 'sequelize/types';
+import { json, where } from 'sequelize/types';
 import Movimiento from '../models/movimiento';
 
 
 export const getMovimientos = async (req: Request, res: Response) => {
 
     const movimiento = await Movimiento.findAll();
+
+    res.json(movimiento);
+}
+
+
+export const getMovimientosIdPro = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    const movimiento = await Movimiento.findAll({
+        where: {
+            idProducto: id
+        }
+    });
 
     res.json(movimiento);
 }

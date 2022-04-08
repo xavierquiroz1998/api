@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize';
 
 //kiara prueba
 //kiarita
-const db = new Sequelize('kiara prueba', 'root', '', {
+const db = new Sequelize('kiarita', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
     // logging: false,

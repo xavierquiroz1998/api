@@ -12,13 +12,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteMovimiento = exports.putMovimiento = exports.postMovimiento = exports.getMovimiento = exports.getMovimientos = void 0;
+exports.deleteMovimiento = exports.putMovimiento = exports.postMovimiento = exports.getMovimiento = exports.getMovimientosIdPro = exports.getMovimientos = void 0;
 const movimiento_1 = __importDefault(require("../models/movimiento"));
 const getMovimientos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const movimiento = yield movimiento_1.default.findAll();
     res.json(movimiento);
 });
 exports.getMovimientos = getMovimientos;
+const getMovimientosIdPro = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    const movimiento = yield movimiento_1.default.findAll({
+        where: {
+            idProducto: id
+        }
+    });
+    res.json(movimiento);
+});
+exports.getMovimientosIdPro = getMovimientosIdPro;
 const getMovimiento = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const movimiento = yield movimiento_1.default.findByPk(id);
