@@ -11,6 +11,15 @@ const Usuario = db.define('Usuario', {
     clave: {
         type: DataTypes.STRING
     },
+    cedula: {
+        type: DataTypes.STRING
+    },
+    direccion: {
+        type: DataTypes.STRING
+    },
+    celular: {
+        type: DataTypes.STRING
+    },
     estado: {
         type: DataTypes.BOOLEAN
     },
