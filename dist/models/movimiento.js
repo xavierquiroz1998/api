@@ -24,6 +24,9 @@ const Movimiento = connection_1.default.define('Movimiento', {
     actual: {
         type: sequelize_1.DataTypes.INTEGER
     },
+    precio: {
+        type: sequelize_1.DataTypes.DOUBLE
+    },
 }, {
     freezeTableName: true,
     timestamps: false

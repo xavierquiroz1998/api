@@ -20,6 +20,9 @@ const Movimiento = db.define('Movimiento', {
     actual: {
         type: DataTypes.INTEGER
     },
+    precio: {
+        type: DataTypes.DOUBLE
+    },
 }, {
     freezeTableName: true,
     timestamps: false

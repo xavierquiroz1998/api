@@ -12,6 +12,25 @@ export const getKardexs = async (req: Request, res: Response) => {
 }
 
 
+
+export const getKardexProductoUltimo = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    const kardex = await Kardex.findAll(
+        {
+            include: [Producto],
+            order: [['createdAt', 'ASC']],
+            where: {
+                idProducto: id
+            }
+        }
+    );
+
+    res.json(kardex[kardex.length - 1]);
+}
+
+
 /* export const getKardexsExclude = async (req: Request, res: Response) => {
 
     const kardexs = await Kardex.findAll({
